@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta name="description" content="تطبيق القرآن الكريم - استمع إلى تلاوة الشيخ عبد الله بصفر">
+  <meta name="theme-color" content="#0b1120">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>القرآن الكريم</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Overlay for sidebar -->
+  <div id="overlay" class="overlay" aria-hidden="true"></div>
+
+  <!-- Sidebar Navigation -->
+  <nav id="sidebar" class="sidebar" aria-label="فهرس السور">
+    <div class="sidebar-header">
+      <h2>فهرس السور</h2>
+      <button id="close-sidebar" class="close-btn" aria-label="إغلاق القائمة">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="sidebar-search">
+      <input type="text" id="surah-search" placeholder="ابحث عن سورة..." aria-label="البحث عن سورة">
+    </div>
+    <ul id="surah-list" class="surah-list"></ul>
+  </nav>
+
+  <!-- Top Header -->
+  <header class="header" id="header">
+    <button id="hamburger" class="hamburger-btn" aria-label="فتح القائمة">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="header-center">
+      <h1 id="surah-title" class="surah-title-header">القرآن الكريم</h1>
+      <span id="ayah-indicator" class="ayah-indicator"></span>
+    </div>
+    <div class="header-spacer"></div>
+  </header>
+
+  <!-- Main Quran Content -->
+  <main id="quran-content" class="quran-content">
+    <!-- Loading State -->
+    <div id="loading" class="loading">
+      <div class="loading-ornament">
+        <div class="spinner"></div>
+      </div>
+      <p class="loading-text">جارٍ التحميل...</p>
+    </div>
+
+    <!-- Surah Header (decorative) -->
+    <div id="surah-header-card" class="surah-header-card" style="display:none;">
+      <div class="surah-ornament-top"></div>
+      <h2 id="surah-name-display" class="surah-name-display"></h2>
+      <div class="surah-meta">
+        <span id="surah-type-display"></span>
+        <span class="meta-separator">•</span>
+        <span id="surah-ayah-count-display"></span>
+      </div>
+      <div class="surah-ornament-bottom"></div>
+    </div>
+
+    <!-- Bismillah -->
+    <div id="bismillah" class="bismillah" style="display:none;">
+      بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ
+    </div>
+
+    <!-- Ayahs Container -->
+    <div id="ayahs-container" class="ayahs-container"></div>
+  </main>
+
+  <!-- Floating Play Button -->
+  <button id="play-btn" class="play-btn" aria-label="تشغيل التلاوة">
+    <span class="play-icon-wrap">
+      <svg id="play-icon-svg" class="play-svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+    </span>
+    <span id="play-text" class="play-text">اقرأ</span>
+  </button>
+
+  <!-- Reciter Info Toast -->
+  <div id="reciter-toast" class="reciter-toast">
+    <span class="reciter-icon">🎙️</span>
+    <span>الشيخ عبد الله بصفر</span>
+  </div>
+
+  <!-- Hidden Audio Element -->
+  <audio id="audio-player" preload="auto"></audio>
+<script src="assets/quran-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
