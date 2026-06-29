@@ -4,7 +4,8 @@ A minimalist and clean Quran display application for Android.
 
 ## Features & Data Sources
 * **Quran Text:** Powered by [amrayn/quran-text](https://github.com/amrayn/quran-text)
-* **Audio Tilawat:** Streamed from [EveryAyah (Abdullah Basfar 192kbps)](https://everyayah.com/data/Abdullah_Basfar_192kbps/)
+* **Audio Tilawat:** Pre-bundled from [EveryAyah (Abdullah Basfar 192kbps)](https://everyayah.com/data/Abdullah_Basfar_192kbps/)
+* **100% Offline:** The compiled APK includes all data—no internet connection required.
 
 ## Download
 If you want to use it on your device, click the button below to download the latest APK:
